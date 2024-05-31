@@ -1,0 +1,37 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+punq = "*"
+asyncpg = "*"
+tenacity = "*"
+aio-pika = "*"
+redis = "*"
+pydantic-settings = "*"
+pydantic = "*"
+setuptools = "*"
+httpx = "*"
+uvicorn = "*"
+gunicorn = "*"
+
+[dev-packages]
+pytest = "*"
+freezegun = "*"
+pytest-asyncio = "*"
+mypy = "*"
+ipython = "*"
+ruff = "*"
+
+[requires]
+python_version = "3.12"
+
+[scripts]
+test="bash -c 'PYTHONPATH=src ENV=pytest DEBUG=1 pytest -vv -x ./src'"
+lint="""
+    bash -c 'ruff check && mypy --ignore-missing-imports --install-types --non-interactive src'
+"""
+beautify = "ruff check --select I --fix"
+start = "bash -c 'DEBUG=1 PYTHONPATH=src python src/app/main.py'"
