@@ -15,7 +15,7 @@ pipenv should be installed and activated, [see](https://pipenv.pypa.io/en/latest
 
 ### Setup
 Install dependencies for development `pipenv install --dev`
-Install dependencies for deploy project `pipen install --deploy --ignore-pipfile`
+Install dependencies for deploy project `pipenv install --deploy --ignore-pipfile`
 
 
 ### Testing
